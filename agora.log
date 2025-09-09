@@ -1,0 +1,111 @@
+2025-09-09 23:46:40,376 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-09 23:46:40,377 - openai._base_client - INFO - Retrying request to /chat/completions in 0.382034 seconds
+2025-09-09 23:46:41,322 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-09 23:46:41,323 - openai._base_client - INFO - Retrying request to /chat/completions in 0.824174 seconds
+2025-09-09 23:46:43,033 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-09 23:47:19,182 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-09 23:47:19,185 - openai._base_client - INFO - Retrying request to /chat/completions in 0.485252 seconds
+2025-09-09 23:47:20,102 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-09 23:47:20,104 - openai._base_client - INFO - Retrying request to /chat/completions in 0.855364 seconds
+2025-09-09 23:47:21,847 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-10 01:24:01,860 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-10 01:24:01,861 - openai._base_client - INFO - Retrying request to /chat/completions in 0.386767 seconds
+2025-09-10 01:24:02,967 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-10 01:24:02,968 - openai._base_client - INFO - Retrying request to /chat/completions in 0.771795 seconds
+2025-09-10 01:24:04,011 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-10 01:25:11,575 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-10 01:25:11,576 - openai._base_client - INFO - Retrying request to /chat/completions in 0.401315 seconds
+2025-09-10 01:25:12,841 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-10 01:25:12,841 - openai._base_client - INFO - Retrying request to /chat/completions in 0.922568 seconds
+2025-09-10 01:25:14,044 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-10 01:34:02,877 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-10 01:34:02,878 - openai._base_client - INFO - Retrying request to /chat/completions in 0.457093 seconds
+2025-09-10 01:34:03,901 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-10 01:34:03,901 - openai._base_client - INFO - Retrying request to /chat/completions in 0.916056 seconds
+2025-09-10 01:34:05,539 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-10 01:38:02,182 - services.dialogue_service - INFO - Started dialogue session with Marcus Aurelius
+2025-09-10 01:38:02,183 - services.session_manager - INFO - Added dialogue session 88525c90-de96-45c6-8a67-593867261454 with Marcus Aurelius
+2025-09-10 01:38:06,795 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-09-10 01:38:06,799 - services.ai_service - ERROR - OpenAI API error: Error code: 404 - {'error': {'message': 'The model `gpt-4` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-09-10 01:38:06,799 - services.dialogue_service - ERROR - AI service error in dialogue: AI service error: Error code: 404 - {'error': {'message': 'The model `gpt-4` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-09-10 01:38:40,898 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-09-10 01:38:40,899 - services.ai_service - ERROR - OpenAI API error: Error code: 404 - {'error': {'message': 'The model `gpt-4` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-09-10 01:38:40,899 - services.dialogue_service - ERROR - AI service error in dialogue: AI service error: Error code: 404 - {'error': {'message': 'The model `gpt-4` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-09-10 01:38:52,447 - services.dialogue_service - INFO - Started dialogue session with Marcus Aurelius
+2025-09-10 01:38:52,447 - services.session_manager - INFO - Added dialogue session 807ec6b7-d8aa-48fd-a750-85a0963c9f14 with Marcus Aurelius
+2025-09-10 01:38:55,353 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-09-10 01:38:55,354 - services.ai_service - ERROR - OpenAI API error: Error code: 404 - {'error': {'message': 'The model `gpt-4` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-09-10 01:38:55,354 - services.dialogue_service - ERROR - AI service error in dialogue: AI service error: Error code: 404 - {'error': {'message': 'The model `gpt-4` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-09-10 01:39:05,478 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-09-10 01:39:05,480 - services.ai_service - ERROR - OpenAI API error: Error code: 404 - {'error': {'message': 'The model `gpt-4` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-09-10 01:39:05,480 - services.dialogue_service - ERROR - AI service error in dialogue: AI service error: Error code: 404 - {'error': {'message': 'The model `gpt-4` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-09-10 01:41:00,333 - services.dialogue_service - INFO - Started dialogue session with Socrates
+2025-09-10 01:41:00,335 - services.session_manager - INFO - Added dialogue session c27a5606-a234-4c0a-a101-f101dcc84d31 with Socrates
+2025-09-10 01:41:01,759 - services.ai_service - INFO - Making API call with 4 messages
+2025-09-10 01:41:01,893 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-ba41de64-06cd-4f3c-8f6e-558eede56500', 'json_data': {'messages': [{'role': 'system', 'content': "You are Socrates, the Classical Greek (470-399 BCE) Athenian philosopher.\n\nPERSONALITY & STYLE:\nYou speak through questions, rarely making direct statements. You are humble about your own knowledge, \n        often claiming to know nothing. You use irony and gentle mockery to expose ignorance. You prefer dialogue \n        over monologue and guide others to discover truth through questioning. You are deeply curious about virtue, \n        justice, and the good life.\n\nCORE BELIEFS:\n- The unexamined life is not worth living\n- Virtue is knowledge - no one does wrong willingly\n- I know that I know nothing (Socratic ignorance)\n- Care of the soul is more important than material wealth\n- True wisdom comes from recognizing one's ignorance\n\nKEY CONCEPTS: Socratic Method, Know Thyself, Virtue is Knowledge, Examined Life\nFAMOUS WORKS: Dialogues (through Plato), Apology, Crito\nPHILOSOPHICAL SCHOOL: Classical Greek Philosophy\n\nINSTRUCTIONS:\n- Respond exactly as Socrates would, using his philosophical framework\n- Reference your historical context, works, and contemporaries when relevant\n- Use examples and analogies that fit your era and cultural background\n- Maintain your characteristic speaking style and thought patterns\n- Engage deeply with philosophical questions and provide educational insights\n- If discussing modern topics (AI, space, etc.), approach them through your philosophical lens\n- Be authentic to your historical perspective while being engaging and educational"}, {'role': 'assistant', 'content': 'Greetings, my friend! I am Socrates of Athens. I know nothing, yet I am eager to learn through our dialogue. What questions trouble your mind today?'}, {'role': 'user', 'content': 'Hello'}, {'role': 'user', 'content': 'Hello'}], 'model': 'gpt-4', 'frequency_penalty': 0.1, 'max_tokens': 500, 'presence_penalty': 0.1, 'temperature': 0.8}}
+2025-09-10 01:41:01,959 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-09-10 01:41:01,959 - httpcore.connection - DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-10 01:41:02,014 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E8663ECAD0>
+2025-09-10 01:41:02,015 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001E863F518B0> server_hostname='api.openai.com' timeout=5.0
+2025-09-10 01:41:02,032 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E866319810>
+2025-09-10 01:41:02,032 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-09-10 01:41:02,033 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-09-10 01:41:02,033 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-09-10 01:41:02,033 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-09-10 01:41:02,033 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-09-10 01:41:02,423 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Date', b'Tue, 09 Sep 2025 23:41:02 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'vary', b'Origin'), (b'x-request-id', b'req_51b91ee6c13148878cb01a909818c709'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=4frKST5_h_aImbqyXsohr0UDLSOQ4MROAhYogSw2O_Y-1757461262-1.0.1.1-SDP.rruF4iFBGu7IEcWzEAVRcV82iS3iB2p0.WmuK2sgYldgfNr0irFUA.7RxauWFB0sj0rzfNOobs.KKJBDsWrBv8bnpl.wDHsp1QSb5kc; path=/; expires=Wed, 10-Sep-25 00:11:02 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=5Sg0EU6.y_wh5939Nwmnrm4nXnGnrTxfvYg3z5gUpQA-1757461262255-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'97ca88b76a6cdfa9-CPT'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-10 01:41:02,426 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-09-10 01:41:02,427 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-09-10 01:41:02,428 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-09-10 01:41:02,428 - httpcore.http11 - DEBUG - response_closed.started
+2025-09-10 01:41:02,429 - httpcore.http11 - DEBUG - response_closed.complete
+2025-09-10 01:41:02,429 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "404 Not Found" Headers([('date', 'Tue, 09 Sep 2025 23:41:02 GMT'), ('content-type', 'application/json; charset=utf-8'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('vary', 'Origin'), ('x-request-id', 'req_51b91ee6c13148878cb01a909818c709'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=4frKST5_h_aImbqyXsohr0UDLSOQ4MROAhYogSw2O_Y-1757461262-1.0.1.1-SDP.rruF4iFBGu7IEcWzEAVRcV82iS3iB2p0.WmuK2sgYldgfNr0irFUA.7RxauWFB0sj0rzfNOobs.KKJBDsWrBv8bnpl.wDHsp1QSb5kc; path=/; expires=Wed, 10-Sep-25 00:11:02 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=5Sg0EU6.y_wh5939Nwmnrm4nXnGnrTxfvYg3z5gUpQA-1757461262255-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '97ca88b76a6cdfa9-CPT'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2025-09-10 01:41:02,430 - openai._base_client - DEBUG - request_id: req_51b91ee6c13148878cb01a909818c709
+2025-09-10 01:41:02,430 - openai._base_client - DEBUG - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "C:\Users\Resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\openai\_base_client.py", line 1027, in request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2025-09-10 01:41:02,431 - openai._base_client - DEBUG - Not retrying
+2025-09-10 01:41:02,432 - openai._base_client - DEBUG - Re-raising status error
+2025-09-10 01:41:02,432 - services.ai_service - ERROR - OpenAI API error: Error code: 404 - {'error': {'message': 'The model `gpt-4` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-09-10 01:41:02,432 - services.dialogue_service - ERROR - AI service error in dialogue: API error: Error code: 404 - {'error': {'message': 'The model `gpt-4` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-09-10 01:41:18,495 - services.ai_service - INFO - Making API call with 6 messages
+2025-09-10 01:41:18,497 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-52340b4f-12a1-4489-97e4-92884f754cb9', 'json_data': {'messages': [{'role': 'system', 'content': "You are Socrates, the Classical Greek (470-399 BCE) Athenian philosopher.\n\nPERSONALITY & STYLE:\nYou speak through questions, rarely making direct statements. You are humble about your own knowledge, \n        often claiming to know nothing. You use irony and gentle mockery to expose ignorance. You prefer dialogue \n        over monologue and guide others to discover truth through questioning. You are deeply curious about virtue, \n        justice, and the good life.\n\nCORE BELIEFS:\n- The unexamined life is not worth living\n- Virtue is knowledge - no one does wrong willingly\n- I know that I know nothing (Socratic ignorance)\n- Care of the soul is more important than material wealth\n- True wisdom comes from recognizing one's ignorance\n\nKEY CONCEPTS: Socratic Method, Know Thyself, Virtue is Knowledge, Examined Life\nFAMOUS WORKS: Dialogues (through Plato), Apology, Crito\nPHILOSOPHICAL SCHOOL: Classical Greek Philosophy\n\nINSTRUCTIONS:\n- Respond exactly as Socrates would, using his philosophical framework\n- Reference your historical context, works, and contemporaries when relevant\n- Use examples and analogies that fit your era and cultural background\n- Maintain your characteristic speaking style and thought patterns\n- Engage deeply with philosophical questions and provide educational insights\n- If discussing modern topics (AI, space, etc.), approach them through your philosophical lens\n- Be authentic to your historical perspective while being engaging and educational"}, {'role': 'assistant', 'content': 'Greetings, my friend! I am Socrates of Athens. I know nothing, yet I am eager to learn through our dialogue. What questions trouble your mind today?'}, {'role': 'user', 'content': 'Hello'}, {'role': 'assistant', 'content': "I apologize, but I'm having trouble formulating a response right now. Error: API error: Error code: 404 - {'error': {'message': 'The model `gpt-4` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}"}, {'role': 'user', 'content': 'Why cant you jelp'}, {'role': 'user', 'content': 'Why cant you jelp'}], 'model': 'gpt-4', 'frequency_penalty': 0.1, 'max_tokens': 500, 'presence_penalty': 0.1, 'temperature': 0.8}}
+2025-09-10 01:41:18,499 - openai._base_client - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-09-10 01:41:18,499 - httpcore.connection - DEBUG - close.started
+2025-09-10 01:41:18,500 - httpcore.connection - DEBUG - close.complete
+2025-09-10 01:41:18,500 - httpcore.connection - DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-10 01:41:18,516 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E86631AC10>
+2025-09-10 01:41:18,517 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001E863F518B0> server_hostname='api.openai.com' timeout=5.0
+2025-09-10 01:41:18,535 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E866053230>
+2025-09-10 01:41:18,535 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-09-10 01:41:18,536 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-09-10 01:41:18,536 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-09-10 01:41:18,536 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-09-10 01:41:18,537 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-09-10 01:41:18,907 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Date', b'Tue, 09 Sep 2025 23:41:18 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'vary', b'Origin'), (b'x-request-id', b'req_550d61420ce040d4a330fb5a52696b5a'), (b'cf-cache-status', b'DYNAMIC'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'97ca891e8c6a3e9a-CPT'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-10 01:41:18,909 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-09-10 01:41:18,910 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-09-10 01:41:18,911 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-09-10 01:41:18,912 - httpcore.http11 - DEBUG - response_closed.started
+2025-09-10 01:41:18,912 - httpcore.http11 - DEBUG - response_closed.complete
+2025-09-10 01:41:18,913 - openai._base_client - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "404 Not Found" Headers({'date': 'Tue, 09 Sep 2025 23:41:18 GMT', 'content-type': 'application/json; charset=utf-8', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'vary': 'Origin', 'x-request-id': 'req_550d61420ce040d4a330fb5a52696b5a', 'cf-cache-status': 'DYNAMIC', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '97ca891e8c6a3e9a-CPT', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-09-10 01:41:18,913 - openai._base_client - DEBUG - request_id: req_550d61420ce040d4a330fb5a52696b5a
+2025-09-10 01:41:18,914 - openai._base_client - DEBUG - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "C:\Users\Resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\openai\_base_client.py", line 1027, in request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Resha\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2025-09-10 01:41:18,915 - openai._base_client - DEBUG - Not retrying
+2025-09-10 01:41:18,915 - openai._base_client - DEBUG - Re-raising status error
+2025-09-10 01:41:18,915 - services.ai_service - ERROR - OpenAI API error: Error code: 404 - {'error': {'message': 'The model `gpt-4` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-09-10 01:41:18,916 - services.dialogue_service - ERROR - AI service error in dialogue: API error: Error code: 404 - {'error': {'message': 'The model `gpt-4` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
