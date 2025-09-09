@@ -17,7 +17,7 @@ class Settings:
         self.log_level = os.getenv("LOG_LEVEL", "INFO")
         
         # AI Model Configuration
-        self.model_name = "gpt-4"
+        self.model_name = "gpt-3.5-turbo"
         self.max_tokens = 500
         self.temperature = 0.8
         
