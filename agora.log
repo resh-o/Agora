@@ -282,3 +282,8 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2025-09-10 01:44:44,567 - services.session_manager - INFO - Ended dialogue session ee103d0c-4bd9-404f-b336-6acd8a0456f3
 2025-09-10 01:44:46,852 - httpcore.connection - DEBUG - close.started
 2025-09-10 01:44:46,853 - httpcore.connection - DEBUG - close.complete
+2025-09-10 01:54:56,158 - services.dialogue_service - INFO - Started dialogue session with Marcus Aurelius
+2025-09-10 01:54:56,159 - services.session_manager - INFO - Added dialogue session 4169e6f7-382b-45a6-bea0-a9058ca11e93 with Marcus Aurelius
+2025-09-10 01:54:57,827 - services.gemini_service - INFO - Making Gemini API call with prompt length: 1667
+2025-09-10 01:54:59,617 - services.gemini_service - ERROR - Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-09-10 01:54:59,618 - services.dialogue_service - ERROR - Gemini service error in dialogue: Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.

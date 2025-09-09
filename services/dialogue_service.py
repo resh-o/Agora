@@ -5,7 +5,7 @@ from typing import Optional, Dict, Any
 import logging
 from models.dialogue import DialogueSession, Message, MessageType
 from models.philosopher import PhilosopherFactory, PhilosopherType, Philosopher
-from services.ai_service import AIService, AIServiceError
+from services.gemini_service import GeminiService, GeminiServiceError
 from config.settings import settings
 
 logger = logging.getLogger(__name__)
@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 class DialogueService:
     """Service for managing dialogue sessions with philosophers."""
     
-    def __init__(self, ai_service: AIService):
+    def __init__(self, ai_service: GeminiService):
         """Initialize the dialogue service."""
         self.ai_service = ai_service
         self.max_history_length = settings.max_history_length
@@ -81,8 +81,8 @@ class DialogueService:
             logger.info(f"Generated response in dialogue with {philosopher.name}")
             return response_message
             
-        except AIServiceError as e:
-            logger.error(f"AI service error in dialogue: {e}")
+        except GeminiServiceError as e:
+            logger.error(f"Gemini service error in dialogue: {e}")
             error_msg = f"I apologize, but I'm having trouble formulating a response right now. Error: {str(e)}"
             return session.add_philosopher_message(error_msg)
         except Exception as e:

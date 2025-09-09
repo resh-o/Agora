@@ -5,7 +5,7 @@ from typing import List, Optional, Dict, Any
 import logging
 from models.debate import DebateSession, DebateParticipant, DebateStatus
 from models.philosopher import PhilosopherFactory, PhilosopherType
-from services.ai_service import AIService, AIServiceError
+from services.gemini_service import GeminiService, GeminiServiceError
 from config.settings import settings
 
 logger = logging.getLogger(__name__)
@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 class DebateService:
     """Service for managing debate sessions between philosophers."""
     
-    def __init__(self, ai_service: AIService):
+    def __init__(self, ai_service: GeminiService):
         """Initialize the debate service."""
         self.ai_service = ai_service
         self.max_history_length = settings.max_history_length
@@ -136,8 +136,8 @@ class DebateService:
             
             return response
             
-        except AIServiceError as e:
-            logger.error(f"AI service error in debate: {e}")
+        except GeminiServiceError as e:
+            logger.error(f"Gemini service error in debate: {e}")
             return f"[{current_speaker.name if current_speaker else 'System'}]: I apologize, but I'm having difficulty formulating my response at the moment."
         except Exception as e:
             logger.error(f"Error getting next debate response: {e}")

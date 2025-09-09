@@ -8,7 +8,7 @@ from colorama import init, Fore, Back, Style
 from models.philosopher import PhilosopherType, PhilosopherFactory
 from models.dialogue import DialogueSession
 from models.debate import DebateSession
-from services.ai_service import AIService
+from services.gemini_service import GeminiService
 from services.dialogue_service import DialogueService
 from services.debate_service import DebateService
 from services.session_manager import SessionManager
@@ -22,7 +22,7 @@ class ConsoleUI:
     
     def __init__(self):
         """Initialize the console UI."""
-        self.ai_service = AIService()
+        self.ai_service = GeminiService()
         self.dialogue_service = DialogueService(self.ai_service)
         self.debate_service = DebateService(self.ai_service)
         self.session_manager = SessionManager()

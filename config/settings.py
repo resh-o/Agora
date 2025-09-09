@@ -11,13 +11,13 @@ class Settings:
     """Application configuration settings."""
     
     def __init__(self):
-        self.openai_api_key = os.getenv("OPENAI_API_KEY", "")
+        self.gemini_api_key = os.getenv("GEMINI_API_KEY", "")
         self.app_name = os.getenv("APP_NAME", "Agora")
         self.debug = os.getenv("DEBUG", "False").lower() == "true"
         self.log_level = os.getenv("LOG_LEVEL", "INFO")
         
         # AI Model Configuration
-        self.model_name = "gpt-3.5-turbo"
+        self.model_name = "gemini-1.5-flash"
         self.max_tokens = 500
         self.temperature = 0.8
         
@@ -27,8 +27,8 @@ class Settings:
         
     def validate(self) -> bool:
         """Validate that required settings are present."""
-        if not self.openai_api_key:
-            raise ValueError("OPENAI_API_KEY is required but not set")
+        if not self.gemini_api_key:
+            raise ValueError("GEMINI_API_KEY is required but not set")
         return True
     
     def to_dict(self) -> Dict[str, Any]:
