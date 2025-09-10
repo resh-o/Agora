@@ -1,6 +1,6 @@
 # 🏛️ Agora - Philosopher Chat Application
 
-An AI-powered application that allows users to engage in philosophical conversations with history's greatest thinkers. Built with clean architecture principles and modern Python practices.
+An AI-powered application that allows users to engage in philosophical conversations with history's greatest thinkers.
 
 ## 🌟 Features
 
@@ -23,39 +23,27 @@ An AI-powered application that allows users to engage in philosophical conversat
 8. **René Descartes** (1596-1650) - French philosopher and mathematician
 9. **John Locke** (1632-1704) - English philosopher and physician
 10. **Karl Marx** (1818-1883) - German philosopher and economist
+11. **Epictetus** (50-135) - Greek Stoic philosopher
+12. **Carl Jung** (1875-1961) - Swiss psychiatrist, psychotherapist, and psychologist
 
 ## 🚀 Quick Start
-
-### Prerequisites
-
-- Python 3.8 or higher
-- OpenAI API key
 
 ### Installation
 
 1. Clone the repository:
-```bash
-git clone <repository-url>
-cd Agora
+```
+git clone https://github.com/resh-o/Agora.git
 ```
 
 2. Install dependencies:
-```bash
+```
 pip install -r requirements.txt
 ```
 
-3. Set up your environment:
-```bash
-cp .env.example .env
-```
-
 4. Add your Gemini API key to the `.env` file:
-```bash
-# Get your free API key from: https://makersuite.google.com/app/apikey
-GEMINI_API_KEY=your_gemini_api_key_here
 ```
-
-**⚠️ SECURITY WARNING:** Never commit your actual API key to git! The `.env` file is in `.gitignore` to prevent this.
+GEMINI_API_KEY=<Gemini_Key>
+```
 
 ### Running the Application
 
@@ -75,7 +63,7 @@ Agora/
 │   ├── dialogue.py      # Dialogue session management
 │   └── debate.py        # Multi-philosopher debate sessions
 ├── services/        # Business logic and external integrations
-│   ├── ai_service.py    # OpenAI API integration
+│   ├── ai_service.py    #Gemini API integration
 │   ├── dialogue_service.py  # Dialogue management
 │   ├── debate_service.py    # Debate management
 │   └── session_manager.py   # Session lifecycle management
@@ -111,15 +99,6 @@ Socrates: Ah, my dear friend, you ask perhaps the most important question of all
 2. Enter your debate topic (e.g., "Is free will an illusion?")
 3. Select 2-5 philosophers to participate
 4. Watch as they engage in authentic philosophical discourse!
-
-## ⚙️ Configuration
-
-The application can be configured through environment variables:
-
-- `OPENAI_API_KEY`: Your OpenAI API key (required)
-- `APP_NAME`: Application name (default: "Agora")
-- `DEBUG`: Enable debug mode (default: False)
-- `LOG_LEVEL`: Logging level (default: INFO)
 
 ## 🎨 Features in Detail
 
@@ -185,18 +164,6 @@ Run the application with debug mode enabled:
 ```bash
 DEBUG=True python main.py
 ```
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📞 Support
-
-If you encounter any issues or have questions, please open an issue on the repository.
 
 ---
 
