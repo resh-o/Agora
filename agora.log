@@ -295,3 +295,27 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2025-09-10 01:57:00,397 - services.dialogue_service - INFO - Generated response in dialogue with Marcus Aurelius
 2025-09-10 01:57:16,312 - services.gemini_service - INFO - Making Gemini API call with prompt length: 4625
 2025-09-10 01:57:20,157 - services.dialogue_service - INFO - Generated response in dialogue with Marcus Aurelius
+2025-09-10 02:09:30,884 - services.dialogue_service - INFO - Started dialogue session with Marcus Aurelius
+2025-09-10 02:09:30,886 - services.session_manager - INFO - Added dialogue session 619d8e85-2c81-4348-b4c7-4b3671b205c4 with Marcus Aurelius
+2025-09-10 02:09:35,356 - services.gemini_service - INFO - Making Gemini API call with prompt length: 1679
+2025-09-10 02:09:39,508 - services.dialogue_service - INFO - Generated response in dialogue with Marcus Aurelius
+2025-09-10 02:11:23,186 - services.dialogue_service - INFO - Started dialogue session with Socrates
+2025-09-10 02:11:23,187 - services.session_manager - INFO - Added dialogue session 453c8ced-5d46-4150-87e6-2b7305c736b3 with Socrates
+2025-09-10 02:11:24,744 - services.gemini_service - INFO - Making Gemini API call with prompt length: 1740
+2025-09-10 02:11:27,640 - services.dialogue_service - INFO - Generated response in dialogue with Socrates
+2025-09-10 02:11:33,810 - services.gemini_service - INFO - Making Gemini API call with prompt length: 2477
+2025-09-10 02:11:36,198 - services.dialogue_service - INFO - Generated response in dialogue with Socrates
+2025-09-10 02:12:04,191 - services.dialogue_service - INFO - Started dialogue session with Socrates
+2025-09-10 02:12:04,192 - services.session_manager - INFO - Added dialogue session 1b0035f8-028b-435e-a758-834db2836de6 with Socrates
+2025-09-10 02:12:07,175 - services.gemini_service - INFO - Making Gemini API call with prompt length: 1752
+2025-09-10 02:12:09,420 - services.dialogue_service - INFO - Generated response in dialogue with Socrates
+2025-09-10 02:12:16,129 - services.gemini_service - INFO - Making Gemini API call with prompt length: 2662
+2025-09-10 02:12:18,635 - services.dialogue_service - INFO - Generated response in dialogue with Socrates
+2025-09-10 02:14:16,845 - services.dialogue_service - INFO - Started dialogue session with Marcus Aurelius
+2025-09-10 02:14:16,846 - services.session_manager - INFO - Added dialogue session bf15862f-fb27-440c-b7d2-86bd839b5033 with Marcus Aurelius
+2025-09-10 02:16:14,939 - services.dialogue_service - INFO - Started dialogue session with Marcus Aurelius
+2025-09-10 02:16:14,939 - services.session_manager - INFO - Added dialogue session dd6fe348-76fd-482e-91a6-9c050a9f368e with Marcus Aurelius
+2025-09-10 02:16:31,145 - services.session_manager - INFO - Ended dialogue session dd6fe348-76fd-482e-91a6-9c050a9f368e
+2025-09-10 02:17:01,462 - services.debate_service - INFO - Created debate session on topic: History
+2025-09-10 02:17:01,463 - services.session_manager - INFO - Added debate session 74062c65-466d-4a72-bac4-4f221c0811be on topic: History
+2025-09-10 02:17:04,038 - services.debate_service - INFO - Started debate on: History

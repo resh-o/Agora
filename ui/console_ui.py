@@ -145,8 +145,9 @@ class ConsoleUI:
             welcome_msg = session.messages[0]
             print(f"\n{Fore.CYAN}{session.philosopher_name}: {Fore.WHITE}{welcome_msg.content}")
         
+        
+        print(f"\n{Fore.YELLOW}Commands: /help, /history, /clear, /end")
         while True:
-            print(f"\n{Fore.YELLOW}Commands: /help, /history, /clear, /end")
             user_input = self._get_user_input(f"{Fore.GREEN}You: {Fore.WHITE}").strip()
             
             if not user_input:

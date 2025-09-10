@@ -49,7 +49,6 @@ class DebateService:
                 for philosopher_type in philosopher_types:
                     session.add_participant(philosopher_type)
             
-            logger.info(f"Created debate session on topic: {topic}")
             return session
             
         except Exception as e:
@@ -97,7 +96,6 @@ class DebateService:
                 opening_statement = self._generate_opening_statement(session, participant)
                 session.add_philosopher_message(participant.name, opening_statement)
             
-            logger.info(f"Started debate on: {session.topic}")
             
         except Exception as e:
             logger.error(f"Error starting debate: {e}")

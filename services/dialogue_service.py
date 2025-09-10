@@ -78,7 +78,7 @@ class DialogueService:
             # Trim history if needed
             self._trim_session_history(session)
             
-            logger.info(f"Generated response in dialogue with {philosopher.name}")
+            logger.debug(f"Generated response in dialogue with {philosopher.name}")
             return response_message
             
         except GeminiServiceError as e:

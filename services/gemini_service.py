@@ -45,9 +45,6 @@ class GeminiService:
             # Build the full prompt with system context and history
             full_prompt = self._build_prompt(system_prompt, conversation_history, user_message)
             
-            # Debug logging
-            logger.info(f"Making Gemini API call with prompt length: {len(full_prompt)}")
-            
             # Configure generation parameters
             generation_config = genai.types.GenerationConfig(
                 temperature=temperature or self.temperature,
