@@ -54,3 +54,9 @@ class PhilosopherError(AgoraException):
     def __init__(self, message: str, philosopher_name: str = None):
         super().__init__(message, "PHILOSOPHER_ERROR")
         self.philosopher_name = philosopher_name
+
+class SessionServiceError(AgoraException):
+    """Exception raised for session service errors."""
+    
+    def __init__(self, message: str):
+        super().__init__(message, "SESSION_SERVICE_ERROR")

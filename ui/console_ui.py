@@ -12,6 +12,7 @@ from services.gemini_service import GeminiService
 from services.dialogue_service import DialogueService
 from services.debate_service import DebateService
 from services.session_manager import SessionManager
+from services.session_service import SessionService
 from config.settings import settings
 
 # Initialize colorama for cross-platform colored output
@@ -26,6 +27,7 @@ class ConsoleUI:
         self.dialogue_service = DialogueService(self.ai_service)
         self.debate_service = DebateService(self.ai_service)
         self.session_manager = SessionManager()
+        self.session_service = SessionService()
         self.current_dialogue_session: Optional[DialogueSession] = None
         self.current_debate_session: Optional[DebateSession] = None
         self.running = True
@@ -132,6 +134,12 @@ class ConsoleUI:
             self.session_manager.add_dialogue_session(session)
             self.current_dialogue_session = session
             
+            # Auto-save new session
+            try:
+                self.session_service.auto_save_session(session)
+            except Exception as save_error:
+                print(f"{Fore.YELLOW}Warning: Failed to save new session: {save_error}")
+            
             print(f"\n{Fore.GREEN}Starting conversation with {session.philosopher_name}...")
             self._dialogue_loop(session)
             
@@ -163,6 +171,12 @@ class ConsoleUI:
                 response_msg = self.dialogue_service.send_message(session, user_input)
                 print(f"\n{Fore.CYAN}{session.philosopher_name}: {Fore.WHITE}{response_msg.content}")
                 
+                # Auto-save session after each interaction
+                try:
+                    self.session_service.auto_save_session(session)
+                except Exception as save_error:
+                    print(f"{Fore.YELLOW}Warning: Failed to auto-save session: {save_error}")
+                
             except Exception as e:
                 print(f"{Fore.RED}Error: {e}")
     
@@ -178,6 +192,12 @@ class ConsoleUI:
             session.clear_history()
             print(f"{Fore.GREEN}Conversation history cleared.")
         elif command == "/end":
+            # Auto-save session before ending
+            try:
+                self.session_service.auto_save_session(session)
+            except Exception as save_error:
+                print(f"{Fore.YELLOW}Warning: Failed to save session: {save_error}")
+            
             self.session_manager.end_dialogue_session(session.id)
             print(f"{Fore.GREEN}Conversation ended.")
             return True
@@ -225,6 +245,12 @@ class ConsoleUI:
             self.session_manager.add_debate_session(session)
             self.current_debate_session = session
             
+            # Auto-save new debate session
+            try:
+                self.session_service.auto_save_session(session)
+            except Exception as save_error:
+                print(f"{Fore.YELLOW}Warning: Failed to save new debate session: {save_error}")
+            
             print(f"\n{Fore.GREEN}Starting debate on: {topic}")
             self.debate_service.start_debate(session)
             self._debate_loop(session)
@@ -262,8 +288,19 @@ class ConsoleUI:
                         print(f"\n{Fore.CYAN}{current_speaker.name}: {Fore.WHITE}{response}")
                     else:
                         print(f"\n{Fore.MAGENTA}Moderator: {Fore.WHITE}{response}")
+                    
+                    # Auto-save session after each debate response
+                    try:
+                        self.session_service.auto_save_session(session)
+                    except Exception as save_error:
+                        print(f"{Fore.YELLOW}Warning: Failed to auto-save session: {save_error}")
                 else:
                     print(f"\n{Fore.GREEN}Debate has concluded.")
+                    # Auto-save final state
+                    try:
+                        self.session_service.auto_save_session(session)
+                    except Exception as save_error:
+                        print(f"{Fore.YELLOW}Warning: Failed to save final session: {save_error}")
                     break
                     
             except Exception as e:
@@ -281,6 +318,11 @@ class ConsoleUI:
             print(f"{Fore.GREEN}Debate resumed.")
         elif command == "/end":
             session.complete_debate()
+            # Auto-save session before ending
+            try:
+                self.session_service.auto_save_session(session)
+            except Exception as save_error:
+                print(f"{Fore.YELLOW}Warning: Failed to save session: {save_error}")
             print(f"{Fore.GREEN}Debate ended.")
             return True
         elif command == "/status":
@@ -354,22 +396,48 @@ class ConsoleUI:
     
     def _resume_session(self) -> None:
         """Resume an existing session."""
-        print(f"\n{Fore.CYAN}Feature coming soon: Resume Session")
+        print(f"\n{Fore.CYAN}{Style.BRIGHT}═══ RESUME SESSION ═══")
+        print(f"{Fore.WHITE}1. Resume Dialogue Session")
+        print(f"{Fore.WHITE}2. Resume Debate Session")
+        print(f"{Fore.WHITE}3. Search Sessions")
+        print(f"{Fore.WHITE}4. Back to Main Menu")
+        
+        choice = self._get_user_input("Enter your choice: ").strip()
+        
+        if choice == "1":
+            self._resume_dialogue_session()
+        elif choice == "2":
+            self._resume_debate_session()
+        elif choice == "3":
+            self._search_sessions()
+        elif choice == "4":
+            return
+        else:
+            print(f"{Fore.RED}Invalid choice. Please try again.")
     
     def _view_session_history(self) -> None:
         """View session history."""
-        stats = self.session_manager.get_session_statistics()
+        print(f"\n{Fore.CYAN}{Style.BRIGHT}═══ SESSION HISTORY ═══")
+        print(f"{Fore.WHITE}1. View Dialogue Sessions")
+        print(f"{Fore.WHITE}2. View Debate Sessions")
+        print(f"{Fore.WHITE}3. View All Sessions")
+        print(f"{Fore.WHITE}4. Session Statistics")
+        print(f"{Fore.WHITE}5. Back to Main Menu")
         
-        print(f"\n{Fore.CYAN}{Style.BRIGHT}═══ SESSION STATISTICS ═══")
-        print(f"{Fore.WHITE}Active Dialogue Sessions: {stats['active_dialogue_sessions']}")
-        print(f"{Fore.WHITE}Active Debate Sessions: {stats['active_debate_sessions']}")
-        print(f"{Fore.WHITE}Total Dialogue Sessions: {stats['total_dialogue_sessions']}")
-        print(f"{Fore.WHITE}Total Debate Sessions: {stats['total_debate_sessions']}")
+        choice = self._get_user_input("Enter your choice: ").strip()
         
-        if stats['philosophers_in_use']:
-            print(f"\n{Fore.CYAN}Philosophers Currently in Use:")
-            for philosopher, count in stats['philosophers_in_use'].items():
-                print(f"{Fore.WHITE}  {philosopher}: {count} session(s)")
+        if choice == "1":
+            self._show_dialogue_sessions()
+        elif choice == "2":
+            self._show_debate_sessions()
+        elif choice == "3":
+            self._show_all_sessions()
+        elif choice == "4":
+            self._show_session_statistics()
+        elif choice == "5":
+            return
+        else:
+            print(f"{Fore.RED}Invalid choice. Please try again.")
     
     def _show_philosopher_info(self) -> None:
         """Show detailed information about philosophers."""
@@ -420,6 +488,197 @@ class ConsoleUI:
         """Clear the console screen."""
         os.system('cls' if os.name == 'nt' else 'clear')
     
+    def _resume_dialogue_session(self) -> None:
+        """Resume a dialogue session."""
+        try:
+            sessions = self.session_service.list_dialogue_sessions(limit=10)
+            if not sessions:
+                print(f"{Fore.YELLOW}No dialogue sessions found.")
+                return
+            
+            print(f"\n{Fore.CYAN}Available Dialogue Sessions:")
+            for i, session in enumerate(sessions, 1):
+                last_activity = session.get('last_activity', 'Unknown')[:19]  # Format datetime
+                print(f"{Fore.WHITE}{i:2d}. {session.get('philosopher_name', 'Unknown')} - "
+                      f"{session.get('message_count', 0)} messages - {last_activity}")
+            
+            choice = self._get_user_input("\nEnter session number (0 to cancel): ").strip()
+            if choice == "0":
+                return
+            
+            try:
+                index = int(choice) - 1
+                if 0 <= index < len(sessions):
+                    session_id = sessions[index]['id']
+                    session = self.session_service.load_dialogue_session(session_id)
+                    self.current_dialogue_session = session
+                    print(f"\n{Fore.GREEN}Resumed conversation with {session.philosopher_name}")
+                    self._dialogue_loop(session)
+                else:
+                    print(f"{Fore.RED}Invalid session number.")
+            except ValueError:
+                print(f"{Fore.RED}Please enter a valid number.")
+                
+        except Exception as e:
+            print(f"{Fore.RED}Error resuming dialogue session: {e}")
+    
+    def _resume_debate_session(self) -> None:
+        """Resume a debate session."""
+        try:
+            sessions = self.session_service.list_debate_sessions(limit=10)
+            if not sessions:
+                print(f"{Fore.YELLOW}No debate sessions found.")
+                return
+            
+            print(f"\n{Fore.CYAN}Available Debate Sessions:")
+            for i, session in enumerate(sessions, 1):
+                last_activity = session.get('last_activity', 'Unknown')[:19]  # Format datetime
+                participants = ', '.join(session.get('participants', []))
+                print(f"{Fore.WHITE}{i:2d}. {session.get('topic', 'Unknown Topic')} - "
+                      f"{session.get('status', 'unknown')} - {participants} - {last_activity}")
+            
+            choice = self._get_user_input("\nEnter session number (0 to cancel): ").strip()
+            if choice == "0":
+                return
+            
+            try:
+                index = int(choice) - 1
+                if 0 <= index < len(sessions):
+                    session_id = sessions[index]['id']
+                    session = self.session_service.load_debate_session(session_id)
+                    self.current_debate_session = session
+                    print(f"\n{Fore.GREEN}Resumed debate on: {session.topic}")
+                    self._debate_loop(session)
+                else:
+                    print(f"{Fore.RED}Invalid session number.")
+            except ValueError:
+                print(f"{Fore.RED}Please enter a valid number.")
+                
+        except Exception as e:
+            print(f"{Fore.RED}Error resuming debate session: {e}")
+    
+    def _search_sessions(self) -> None:
+        """Search for sessions."""
+        query = self._get_user_input("Enter search query: ").strip()
+        if not query:
+            return
+        
+        try:
+            sessions = self.session_service.search_sessions(query)
+            if not sessions:
+                print(f"{Fore.YELLOW}No sessions found matching '{query}'.")
+                return
+            
+            print(f"\n{Fore.CYAN}Search Results for '{query}':")
+            for i, session in enumerate(sessions, 1):
+                session_type = session.get('session_type', 'unknown')
+                if session_type == 'dialogue':
+                    name = session.get('philosopher_name', 'Unknown')
+                else:
+                    name = session.get('topic', 'Unknown Topic')
+                
+                last_activity = session.get('last_activity', 'Unknown')[:19]
+                print(f"{Fore.WHITE}{i:2d}. [{session_type.title()}] {name} - {last_activity}")
+            
+            choice = self._get_user_input("\nEnter session number to resume (0 to cancel): ").strip()
+            if choice == "0":
+                return
+            
+            try:
+                index = int(choice) - 1
+                if 0 <= index < len(sessions):
+                    selected_session = sessions[index]
+                    session_id = selected_session['id']
+                    session_type = selected_session.get('session_type')
+                    
+                    if session_type == 'dialogue':
+                        session = self.session_service.load_dialogue_session(session_id)
+                        self.current_dialogue_session = session
+                        print(f"\n{Fore.GREEN}Resumed conversation with {session.philosopher_name}")
+                        self._dialogue_loop(session)
+                    elif session_type == 'debate':
+                        session = self.session_service.load_debate_session(session_id)
+                        self.current_debate_session = session
+                        print(f"\n{Fore.GREEN}Resumed debate on: {session.topic}")
+                        self._debate_loop(session)
+                else:
+                    print(f"{Fore.RED}Invalid session number.")
+            except ValueError:
+                print(f"{Fore.RED}Please enter a valid number.")
+                
+        except Exception as e:
+            print(f"{Fore.RED}Error searching sessions: {e}")
+    
+    def _show_dialogue_sessions(self) -> None:
+        """Show all dialogue sessions."""
+        try:
+            sessions = self.session_service.list_dialogue_sessions()
+            if not sessions:
+                print(f"{Fore.YELLOW}No dialogue sessions found.")
+                return
+            
+            print(f"\n{Fore.CYAN}Dialogue Sessions:")
+            for i, session in enumerate(sessions, 1):
+                last_activity = session.get('last_activity', 'Unknown')[:19]
+                status = "Active" if session.get('is_active') else "Inactive"
+                print(f"{Fore.WHITE}{i:2d}. {session.get('philosopher_name', 'Unknown')} - "
+                      f"{session.get('message_count', 0)} messages - {status} - {last_activity}")
+                
+        except Exception as e:
+            print(f"{Fore.RED}Error loading dialogue sessions: {e}")
+    
+    def _show_debate_sessions(self) -> None:
+        """Show all debate sessions."""
+        try:
+            sessions = self.session_service.list_debate_sessions()
+            if not sessions:
+                print(f"{Fore.YELLOW}No debate sessions found.")
+                return
+            
+            print(f"\n{Fore.CYAN}Debate Sessions:")
+            for i, session in enumerate(sessions, 1):
+                last_activity = session.get('last_activity', 'Unknown')[:19]
+                participants = ', '.join(session.get('participants', []))
+                print(f"{Fore.WHITE}{i:2d}. {session.get('topic', 'Unknown Topic')} - "
+                      f"{session.get('status', 'unknown')} - {participants} - {last_activity}")
+                
+        except Exception as e:
+            print(f"{Fore.RED}Error loading debate sessions: {e}")
+    
+    def _show_all_sessions(self) -> None:
+        """Show all sessions."""
+        print(f"\n{Fore.CYAN}All Sessions:")
+        self._show_dialogue_sessions()
+        self._show_debate_sessions()
+    
+    def _show_session_statistics(self) -> None:
+        """Show session statistics."""
+        try:
+            dialogue_sessions = self.session_service.list_dialogue_sessions()
+            debate_sessions = self.session_service.list_debate_sessions()
+            
+            active_dialogues = len([s for s in dialogue_sessions if s.get('is_active')])
+            total_dialogues = len(dialogue_sessions)
+            total_debates = len(debate_sessions)
+            
+            print(f"\n{Fore.CYAN}{Style.BRIGHT}═══ SESSION STATISTICS ═══")
+            print(f"{Fore.WHITE}Active Dialogue Sessions: {active_dialogues}")
+            print(f"{Fore.WHITE}Total Dialogue Sessions: {total_dialogues}")
+            print(f"{Fore.WHITE}Total Debate Sessions: {total_debates}")
+            
+            if dialogue_sessions:
+                philosophers = {}
+                for session in dialogue_sessions:
+                    name = session.get('philosopher_name', 'Unknown')
+                    philosophers[name] = philosophers.get(name, 0) + 1
+                
+                print(f"\n{Fore.CYAN}Philosophers by Session Count:")
+                for philosopher, count in sorted(philosophers.items(), key=lambda x: x[1], reverse=True):
+                    print(f"{Fore.WHITE}  {philosopher}: {count} session(s)")
+                    
+        except Exception as e:
+            print(f"{Fore.RED}Error loading session statistics: {e}")
+
     def _show_goodbye(self) -> None:
         """Show goodbye message."""
         print(f"\n{Fore.CYAN}{Style.BRIGHT}Thank you for visiting the Agora!")

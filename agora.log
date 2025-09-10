@@ -319,3 +319,17 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2025-09-10 02:17:01,462 - services.debate_service - INFO - Created debate session on topic: History
 2025-09-10 02:17:01,463 - services.session_manager - INFO - Added debate session 74062c65-466d-4a72-bac4-4f221c0811be on topic: History
 2025-09-10 02:17:04,038 - services.debate_service - INFO - Started debate on: History
+2025-09-10 02:33:51,934 - services.session_manager - INFO - Added debate session dd19aba5-230f-4234-8af6-8f6754be497f on topic: Abortion
+2025-09-10 02:34:22,153 - services.dialogue_service - INFO - Started dialogue session with Plato
+2025-09-10 02:34:22,154 - services.session_manager - INFO - Added dialogue session fead5585-a705-4128-9e31-e1c80c795e8f with Plato
+2025-09-10 02:34:57,646 - services.session_manager - INFO - Ended dialogue session fead5585-a705-4128-9e31-e1c80c795e8f
+2025-09-10 02:40:00,124 - services.dialogue_service - INFO - Started dialogue session with Aristotle
+2025-09-10 02:40:00,125 - services.session_manager - INFO - Added dialogue session 136783a0-196d-4ffa-8c02-701ba2c162a5 with Aristotle
+2025-09-10 02:40:00,126 - services.session_service - INFO - Dialogue session 136783a0-196d-4ffa-8c02-701ba2c162a5 saved to sessions\dialogues\136783a0-196d-4ffa-8c02-701ba2c162a5.json
+2025-09-10 02:40:05,929 - services.session_service - INFO - Dialogue session 136783a0-196d-4ffa-8c02-701ba2c162a5 saved to sessions\dialogues\136783a0-196d-4ffa-8c02-701ba2c162a5.json
+2025-09-10 02:40:06,872 - services.session_service - INFO - Dialogue session 136783a0-196d-4ffa-8c02-701ba2c162a5 saved to sessions\dialogues\136783a0-196d-4ffa-8c02-701ba2c162a5.json
+2025-09-10 02:40:06,873 - services.session_manager - INFO - Ended dialogue session 136783a0-196d-4ffa-8c02-701ba2c162a5
+2025-09-10 02:40:38,262 - services.session_service - INFO - Dialogue session 136783a0-196d-4ffa-8c02-701ba2c162a5 loaded from sessions\dialogues\136783a0-196d-4ffa-8c02-701ba2c162a5.json
+2025-09-10 02:40:45,623 - services.session_service - INFO - Dialogue session 136783a0-196d-4ffa-8c02-701ba2c162a5 saved to sessions\dialogues\136783a0-196d-4ffa-8c02-701ba2c162a5.json
+2025-09-10 02:40:59,135 - services.session_service - INFO - Dialogue session 136783a0-196d-4ffa-8c02-701ba2c162a5 saved to sessions\dialogues\136783a0-196d-4ffa-8c02-701ba2c162a5.json
+2025-09-10 02:40:59,136 - services.session_manager - INFO - Ended dialogue session 136783a0-196d-4ffa-8c02-701ba2c162a5
