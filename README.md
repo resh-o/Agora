@@ -49,10 +49,13 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-4. Add your OpenAI API key to the `.env` file:
+4. Add your Gemini API key to the `.env` file:
+```bash
+# Get your free API key from: https://makersuite.google.com/app/apikey
+GEMINI_API_KEY=your_gemini_api_key_here
 ```
-OPENAI_API_KEY=your_api_key_here
-```
+
+**⚠️ SECURITY WARNING:** Never commit your actual API key to git! The `.env` file is in `.gitignore` to prevent this.
 
 ### Running the Application
 

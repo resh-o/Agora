@@ -287,3 +287,11 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2025-09-10 01:54:57,827 - services.gemini_service - INFO - Making Gemini API call with prompt length: 1667
 2025-09-10 01:54:59,617 - services.gemini_service - ERROR - Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
 2025-09-10 01:54:59,618 - services.dialogue_service - ERROR - Gemini service error in dialogue: Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-09-10 01:56:39,702 - services.dialogue_service - INFO - Started dialogue session with Marcus Aurelius
+2025-09-10 01:56:39,704 - services.session_manager - INFO - Added dialogue session 969184f5-4b90-458f-8243-7897975aedc1 with Marcus Aurelius
+2025-09-10 01:56:42,076 - services.gemini_service - INFO - Making Gemini API call with prompt length: 1667
+2025-09-10 01:56:45,033 - services.dialogue_service - INFO - Generated response in dialogue with Marcus Aurelius
+2025-09-10 01:56:56,728 - services.gemini_service - INFO - Making Gemini API call with prompt length: 2418
+2025-09-10 01:57:00,397 - services.dialogue_service - INFO - Generated response in dialogue with Marcus Aurelius
+2025-09-10 01:57:16,312 - services.gemini_service - INFO - Making Gemini API call with prompt length: 4625
+2025-09-10 01:57:20,157 - services.dialogue_service - INFO - Generated response in dialogue with Marcus Aurelius
